@@ -32,4 +32,4 @@ To get this application running locally, follow these steps:
 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/golamrabbi-git/mystore-app.git
-   cd your-repo-name
+   cd demo-nuxt-project
