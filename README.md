@@ -1,75 +1,35 @@
-# Nuxt 3 Minimal Starter
+# My Store App using Nuxt 3
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+This is a demo e-commerce application built with [Nuxt 3](https://nuxt.com/) that includes a simple add-to-cart functionality. This app demonstrates the fundamental features of a shopping cart, including adding items to the cart, updating quantities, applying coupons, and calculating totals.
 
-## Setup
+## Features
 
-Make sure to install the dependencies:
+- **Product Listing**: View a list of available products.
+- **Add to Cart**: Add products to your shopping cart and update quantities.
+- **Coupon Application**: Apply discount coupons for savings.
+- **Price Calculations**: Automatic calculation of subtotal, tax, and total prices.
+- **Persistent Cart**: Keeps cart data stored across sessions using `localStorage`.
 
-```bash
-# npm
-npm install
+## Technologies Used
 
-# pnpm
-pnpm install
+- **Nuxt 3**: For a modern, server-rendered Vue 3 application.
+- **Pinia**: State management for managing cart items, coupons, and totals.
+- **Vue Composition API**: For reactive and modular components.
+- **$fetch**: To handle API requests for product data.
+- **CSS/SCSS**: Basic styling for a responsive and user-friendly UI.
 
-# yarn
-yarn install
+## Getting Started
 
-# bun
-bun install
-```
+To get this application running locally, follow these steps:
 
-## Development Server
+### Prerequisites
 
-Start the development server on `http://localhost:3000`:
+- **Node.js** and **npm**: Make sure you have Node.js installed. You can download it from [here](https://nodejs.org/).
+- **Nuxt 3**: Install the Nuxt 3 CLI if you haven't already.
 
-```bash
-# npm
-npm run dev
+### Installation
 
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/golamrabbi-git/mystore-app.git
+   cd your-repo-name
