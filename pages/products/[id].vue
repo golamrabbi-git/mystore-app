@@ -58,12 +58,17 @@
       </div>
       <!-- Add to favourites and add to cart sections -->
       <div class="flex items-center justify-start mt-4">
-        <button
+        <NuxtLink
+          to="/wishlist"
           class="favourite-btn flex items-center mr-1 lg:space-x-1 lg:mr-10"
+          @click="favoriteStore.addFavouriteToDB(res.id)"
         >
           <Icon name="carbon:favorite" class="w-5 h-5" />
-          <span>Add to favourites</span>
-        </button>
+          <!-- <span v-if="isItemAvailableInTheCart(res.id)">Go To Favorites</span> -->
+          <!-- <span v-else>Add to Favourites</span>
+           -->
+          <span>Add to favorites</span>
+        </NuxtLink>
         <NuxtLink
           to="/cart"
           class="cart-btn flex items-center space-x-1"
@@ -85,6 +90,10 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import { useCartStore } from "~/stores/cartStore";
+import { useFavouriteStore } from "~/stores/favoriteStore";
+
+const favoriteStore = useFavouriteStore();
+
 
 const { id } = useRoute().params;
 let isLoading = ref(true);

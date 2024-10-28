@@ -58,7 +58,6 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
 import CartCard from "~/components/cartCard.vue";
 import { useCartStore } from "~/stores/cartStore";
 

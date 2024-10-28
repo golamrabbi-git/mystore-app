@@ -31,7 +31,7 @@
     if (email.value && password.value) {
       // Example logic for login
       // Replace this with actual authentication logic
-      if (email.value === 'user@example.com' && password.value === 'password123') {
+      if (email.value === 'admin@example.com' && password.value === 'secret') {
         // Simulate successful login
         alert('Login successful!')
       } else {
