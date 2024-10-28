@@ -108,7 +108,7 @@
   </div>
 
   <!-- Slot -->
-  <div class="mx-auto p-4 items-center lg:mt-16">
+  <div class="container mx-auto p-4 items-center lg:mt-16">
     <slot />
   </div>
 </template>
