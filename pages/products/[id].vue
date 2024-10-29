@@ -2,7 +2,7 @@
   <div v-if="isLoading">
     <p>Loading product details...</p>
   </div>
-  <div v-else class="flex flex-col lg:flex-row">
+  <div v-else class="flex flex-col lg:flex-row mt-10">
     <div class="w-full lg:w-1/2 p-4 lg:p-0 2xl:p-10">
       <!-- <img :src="res.image" alt="product-image" class="hover:scale-110 transition duration-300"> -->
       <img
@@ -64,10 +64,8 @@
           @click="favoriteStore.addFavouriteToDB(res.id)"
         >
           <Icon name="carbon:favorite" class="w-5 h-5" />
-          <!-- <span v-if="isItemAvailableInTheCart(res.id)">Go To Favorites</span> -->
-          <!-- <span v-else>Add to Favourites</span>
-           -->
-          <span>Add to favorites</span>
+          <span v-if="isItemAvailableInTheFavList(res.id)">Go To Favorites</span>
+          <span v-else>Add to Favourites</span>
         </NuxtLink>
         <NuxtLink
           to="/cart"
@@ -92,6 +90,7 @@ import { ref, onMounted } from "vue";
 import { useCartStore } from "~/stores/cartStore";
 import { useFavouriteStore } from "~/stores/favoriteStore";
 
+const cartStore = useCartStore();
 const favoriteStore = useFavouriteStore();
 
 
@@ -111,10 +110,13 @@ onMounted(async () => {
   }
 });
 
-const cartStore = useCartStore();
+
 
 const isItemAvailableInTheCart = (id) => {
   return Object.keys(cartStore.cart).includes(id.toString());
+};
+ const isItemAvailableInTheFavList = (id) => {
+  return (favoriteStore.favouriteList).includes(id.toString());
 };
 </script>
 

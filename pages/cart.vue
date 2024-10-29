@@ -1,5 +1,5 @@
 <template>
-  <h1 class="text-2xl text-center text-green-600 mb-4">Shopping Cart</h1>
+  <h1 class="text-2xl text-center text-green-600 my-4">Shopping Cart</h1>
   <div class=" ">
     <div
       class="hidden lg:grid grid-cols-6 gap-4 p-4 border border-green-600 bg-green-50 rounded-xl mb-2"
@@ -40,6 +40,7 @@
           :removeFromCart="cartStore.removeFromLocalStorage"
           :increaseQuantityByOne="cartStore.increaseProductQuantity"
           :decreaseQuantityByOne="cartStore.decreaseProductQuantity"
+          :addToFavouriteList = "favouriteStore.addFavouriteToDB"
         />
       </div>
     </div>
@@ -60,12 +61,10 @@
 <script setup>
 import CartCard from "~/components/cartCard.vue";
 import { useCartStore } from "~/stores/cartStore";
-
+import { useFavouriteStore } from "~/stores/favoriteStore";
 // Initialize cartStore
 const cartStore = useCartStore();
-
-
-
+const favouriteStore = useFavouriteStore();
 </script>
 
 <style scoped></style>

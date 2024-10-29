@@ -1,14 +1,14 @@
 <template>
   <div>
-    <div v-if ="res" class="grid grid-cols-6 gap-2 lg:gap-4">
+    <div v-if="res" class="grid grid-cols-6 gap-2 lg:gap-4">
       <!-- Product Image and Title -->
-      <div class="grid col-span-3 gap-4 p-2 lg:p-4 grid-cols-3 items-center ">
+      <div class="grid col-span-3 gap-4 p-2 lg:p-4 grid-cols-3 items-center">
         <!-- Image Container -->
-        <div class="flex justify-center items-center ">
+        <div class="flex justify-center items-center">
           <img
             :src="res.image"
             alt="product-thumb"
-            class="w-14 h-14 lg:w-20 lg:h-20 object-contain cursor-pointer "
+            class="w-14 h-14 lg:w-20 lg:h-20 object-contain cursor-pointer"
           />
         </div>
         <!-- Product Title -->
@@ -16,9 +16,7 @@
       </div>
 
       <!-- Product Quantityn and Button Controls -->
-      <div
-        class="grid col-span-3 grid-cols-3 gap-1 lg:gap-4 p-1 lg:p-4"
-      >
+      <div class="grid col-span-3 grid-cols-3 gap-1 lg:gap-4 p-1 lg:p-4">
         <!-- Product Quantity Controls -->
         <div class="grid col-span-2 grid-cols-1 lg:grid-cols-2">
           <div class="flex-center">
@@ -35,7 +33,9 @@
             >
 
             <!-- Quantity Display -->
-            <span class="px-4 font-bold lg:text-2xl">{{ productQuantity }}</span>
+            <span class="px-4 font-bold lg:text-2xl">{{
+              productQuantity
+            }}</span>
 
             <!-- Increment Button -->
             <span @click="increaseQuantityByOne(productId)" class="incDec-btn"
@@ -55,17 +55,22 @@
         <div class="grid-center gap-2 lg:grid-cols-2">
           <div class="grid-center">
             <Icon
-            name="material-symbols:favorite-rounded"
-            class="cursor-pointer text-green-300 text-2xl hover:text-green-500 "
-            @click=""
-          />
+              name="material-symbols:favorite-rounded"
+              :class="[
+                'cursor-pointer text-2xl hover:text-green-500',
+                isItemAvailableInTheFavList(res.id)
+                  ? 'text-green-500'
+                  : 'text-green-300',
+              ]"
+              @click="addToFavouriteList(res.id)"
+            />
           </div>
           <div class="grid-center">
             <Icon
-            name="material-symbols:delete-outline-rounded"
-            class="cursor-pointer text-red-300 text-2xl hover:text-red-500 "
-            @click="removeFromCart(productId)"
-          />
+              name="material-symbols:delete-outline-rounded"
+              class="cursor-pointer text-red-300 text-2xl hover:text-red-500"
+              @click="removeFromCart(productId)"
+            />
           </div>
         </div>
       </div>
@@ -78,15 +83,23 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
-
+import { useFavouriteStore } from "~/stores/favoriteStore";
+const favoriteStore = useFavouriteStore();
 // Define props
-const { productId, productQuantity, removeFromCart, increaseQuantityByOne, decreaseQuantityByOne } = defineProps({
+const {
+  productId,
+  productQuantity,
+  removeFromCart,
+  increaseQuantityByOne,
+  decreaseQuantityByOne,
+} = defineProps({
   // res: Object,
   productId: [String, Number],
   productQuantity: Number,
   removeFromCart: Function,
   increaseQuantityByOne: Function,
   decreaseQuantityByOne: Function,
+  addToFavouriteList: Function,
 });
 
 // console.log(res);
@@ -104,7 +117,9 @@ onMounted(async () => {
   }
 });
 
-
+const isItemAvailableInTheFavList = (id) => {
+  return favoriteStore.favouriteList.includes(id);
+};
 </script>
 
 <style scoped></style>

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <p class="text-center text-2xl text-green-600 mb-4">Favourite Product Lists</p>
+        <p class="text-center text-2xl text-green-600 my-4">Favourite Products List</p>
       <div class="flex flex-col gap-3 mb-4">
         <div class="border border-green-600 rounded-xl" v-for="productId in favoriteStore.favouriteList" :key="productId">
         <WishListCard
