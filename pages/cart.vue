@@ -48,7 +48,7 @@
     <div
       class="border border-green-600 rounded-xl mt-4 p-2 lg:p-4 lg:flex justify-around bg-gray-100"
     >
-    <div>
+    <div class="lg:grid-center">
       <Coupon />
     </div>
       <div class="border border-green-600 p-2 mt-2 lg:m-0 lg:p-4 rounded-md bg-green-50">

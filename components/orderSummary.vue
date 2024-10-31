@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="lg:px-20 lg:py-2">
       <div>
         <p>Original Price: {{ originalPrice }} USD</p>
         <p>Discount: {{ savings }} USD</p>
@@ -8,13 +8,13 @@
         <p class="border border-green-500"></p>
         <p>Grand Total: {{ grandTotal }} USD</p>
       </div>
-      <div class="">
+      <div class="mt-2">
         <div class="p-2 text-white text-center rounded-md bg-green-500 mt-1 cursor-pointer hover:bg-green-600">
-          <p>Proceed to Order</p>
+          <NuxtLink to='/demo'>Proceed to Order</NuxtLink>
         </div>
-        <div class="flex justify-center mt-1">
-          <span class="mr-2">Or</span>
-          <NuxtLink to="/products" class="hover:text-[#42b883] underline text-green-500 "
+        <div class="flex flex-col justify-center mt-1">
+          <p class="text-center">Or</p>
+          <NuxtLink to="/products" class="hover:text-[#42b883] underline text-green-500 text-center"
               >Continue Shopping</NuxtLink
             >
         </div>
