@@ -1,6 +1,6 @@
 <template>
   <h1 class="text-2xl text-center text-green-600 mb-4">Shopping Cart</h1>
-  <div class=" ">
+  <div v-if="Object.keys(cartStore.cart).length" class=" ">
     <div
       class="hidden lg:grid grid-cols-6 gap-4 p-4 border border-green-600 bg-green-50 rounded-xl mb-2"
     >
@@ -55,6 +55,7 @@
       </div>
     </div>
   </div>
+  <p v-else class="text-xl text-center text-green-600">No items in the cart</p>
 </template>
 
 <script setup>

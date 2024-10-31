@@ -8,6 +8,17 @@
         <p class="border border-green-500"></p>
         <p>Grand Total: {{ grandTotal }} USD</p>
       </div>
+      <div class="">
+        <div class="p-2 text-white text-center rounded-md bg-green-500 mt-1 cursor-pointer hover:bg-green-600">
+          <p>Proceed to Order</p>
+        </div>
+        <div class="flex justify-center mt-1">
+          <span class="mr-2">Or</span>
+          <NuxtLink to="/products" class="hover:text-[#42b883] underline text-green-500 "
+              >Continue Shopping</NuxtLink
+            >
+        </div>
+      </div>
     </div>
   </template>
   
