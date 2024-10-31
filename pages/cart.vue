@@ -40,6 +40,7 @@
           :removeFromCart="cartStore.removeFromLocalStorage"
           :increaseQuantityByOne="cartStore.increaseProductQuantity"
           :decreaseQuantityByOne="cartStore.decreaseProductQuantity"
+          :addToFavouriteList = "favouriteStore.addFavouriteToDB"
         />
       </div>
     </div>
@@ -61,12 +62,10 @@
 <script setup>
 import CartCard from "~/components/cartCard.vue";
 import { useCartStore } from "~/stores/cartStore";
-
+import { useFavouriteStore } from "~/stores/favoriteStore";
 // Initialize cartStore
 const cartStore = useCartStore();
-
-
-
+const favouriteStore = useFavouriteStore();
 </script>
 
 <style scoped></style>

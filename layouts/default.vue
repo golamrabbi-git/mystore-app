@@ -6,7 +6,7 @@
         class="lg:hidden flex justify-between w-full p-4 bg-white shadow-md z-50"
       >
         <div>
-          <NuxtLink to="/" class="font-bold text-2xl text-[#42b883]">
+          <NuxtLink to="/" class="font-bold text-2xl text-[#42b883]" >
             My Store
           </NuxtLink>
         </div>
@@ -26,23 +26,23 @@
       >
         <ul class="text-xl">
           <li class="nav-link mb-2">
-            <NuxtLink to="/products" class="hover:text-[#42b883]"
+            <NuxtLink to="/products" class="hover:text-[#42b883]" @click ="toggleNav"
               >Products</NuxtLink
             >
           </li>
           <li class="nav-link mb-2">
-            <NuxtLink to="/about" class="hover:text-[#42b883]">About</NuxtLink>
+            <NuxtLink to="/about" class="hover:text-[#42b883] " @click ="toggleNav">About</NuxtLink>
           </li>
         </ul>
         <NuxtLink
           to="/cart"
-          class="flex items-center text-xl mt-2 hover:text-[#42b883]"
+          class="flex items-center text-xl mt-2 hover:text-[#42b883]"  @click ="toggleNav"
         >
           <span>Cart</span>
         </NuxtLink>
         <NuxtLink
           to="/wishlist"
-          class="flex items-center text-xl mt-2 hover:text-[#42b883]"
+          class="flex items-center text-xl mt-2 hover:text-[#42b883]"  @click ="toggleNav"
         >
           <span>Wishlist</span>
         </NuxtLink>
